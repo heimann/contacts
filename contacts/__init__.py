@@ -32,3 +32,5 @@ Here's how it works:
 :copyright: (c) 2017 by David Heimann.
 :license: MIT, see LICENSE for more details.
 """
+
+from .api import ContactCard
