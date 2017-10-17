@@ -1,5 +1,5 @@
 # Contacts
-Contacts lets humans create contact cards, so that they can talk to other humans without being confused. 
+☎️Contacts lets humans create contact cards, so that they can talk to other humans without being confused. 
 
 ![Phone Gif](https://media.giphy.com/media/yPhqlJccIOaru/giphy.gif)
 
@@ -12,6 +12,7 @@ card = ContactCard(
     first_name='David',
     last_name='Heimann',
     phone_number='+1XXXXXXX',
+    photo=image_file,
     email='email@address.com',
     twitter='@david_heimann',
     website='https://about.me/dheimann'
