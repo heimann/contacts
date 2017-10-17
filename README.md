@@ -9,6 +9,7 @@ So, someone needs your digits? No problem, couldn't be easier. Observe:
 from contacts import ContactCard
 
 card = ContactCard(
+    name='David Heimann',
     first_name='David',
     last_name='Heimann',
     phone_number='+1XXXXXXX',

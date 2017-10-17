@@ -11,6 +11,7 @@ with people who know who you are.
 Here's how it works:
    >>> from contacts import ContactCard
    >>> card = ContactCard()
+   >>> card.name = 'David Heimann'
    >>> card.first_name = 'David'
    >>> card.last_name = 'Heimann'
    >>> card.photo = image_file
@@ -20,11 +21,12 @@ Here's how it works:
    Card built.
    >>> print(card)
    Contact Card (vobject)
+   Name: David Heimann
    First Name: David
    Last Name: Heimann
    Phone Number: +1XXXXXXXX
    Photo: JPEG (2 MB)
-   Twitter: @david_Heimann
+   Twitter: @david_heimann
 
    Card built at: <timestamp>
 :copyright: (c) 2017 by David Heimann.
