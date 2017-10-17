@@ -2,7 +2,7 @@
 contacts.api
 ~~~~~~~~~~~~
 This module implements the Contacts 📕 API.
-:copyright: (c) 2012 by David Heimann.
+:copyright: (c) 2017 by David Heimann.
 :license: MIT, see LICENSE for more details.
 """
 
