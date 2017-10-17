@@ -22,3 +22,6 @@ card = ContactCard(
 # Build the card to generate a file that can be saved locally or to a server of your choosing.
 card.build()
 ```
+
+**⚠️WARNING⚠️:** Contacts is a WIP and doesn't work yet. Feel free to help out or subscribe / star and following 
+along. I'll remove this when it's usable.
