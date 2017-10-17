@@ -16,4 +16,7 @@ card = ContactCard(
     twitter='@david_heimann',
     website='https://about.me/dheimann'
 )
+
+# Build the card to generate a file that can be saved locally or to a server of your choosing.
+card.build()
 ```
