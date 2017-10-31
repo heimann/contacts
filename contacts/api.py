@@ -14,6 +14,7 @@ from .exceptions import (
 
 from .rules import ALLOWED_FIELDS
 
+
 class ContactCard(object):
     """A :class: `Contact Card <ContactCard>` object that describes a person or entity for use with Phones.
 
@@ -35,6 +36,7 @@ class ContactCard(object):
             website=False,
             twitter=False
         ):
+    ):
         """Initializes a ContactCard.
 
         :param name: Full Name (required).
@@ -51,7 +53,6 @@ class ContactCard(object):
         allowed_keys = set(ALLOWED_FIELDS)
         self.__dict__.update((key, False) for key in allowed_keys)
         self.__dict__.update((key, value) for key, value in kwargs.items() if key in allowed_keys)
-
 
     def __setattr__(self, attribute, value):
         if not attribute in set(self._allowed_fields):
