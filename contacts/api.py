@@ -12,6 +12,7 @@ from .exceptions import (
     ContactCardException,
 )
 
+from .fields.phone_number import convert_to_e164
 from .rules import ALLOWED_FIELDS
 
 
@@ -35,7 +36,6 @@ class ContactCard(object):
             email=False,
             website=False,
             twitter=False
-        ):
     ):
         """Initializes a ContactCard.
 
@@ -62,3 +62,12 @@ class ContactCard(object):
             ))
         else:
             self.__dict__[attribute] = value
+
+    def _clean_phone_number(self):
+        if not self.phone_number:
+            raise ContactCardException(
+                "A Contact Card must have a :phone_number: to pass validation."
+            )
+
+        self.phone_number = convert_to_e164(self.phone_number)
+
