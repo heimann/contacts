@@ -1,18 +1,18 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f09d573ac885cf938f8135f3e091adc5db4472b949a9517b3d08d6f7e214288a"
+            "sha256": "2f138b910bf8bf60abd79a8aec05b0ab52bc86d9726722d5be02b5cd09278b7e"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
-            "implementation_version": "3.6.2",
+            "implementation_version": "3.6.1",
             "os_name": "posix",
             "platform_machine": "x86_64",
             "platform_python_implementation": "CPython",
-            "platform_release": "17.0.0",
+            "platform_release": "16.7.0",
             "platform_system": "Darwin",
-            "platform_version": "Darwin Kernel Version 17.0.0: Thu Aug 24 21:48:19 PDT 2017; root:xnu-4570.1.46~2/RELEASE_X86_64",
-            "python_full_version": "3.6.2",
+            "platform_version": "Darwin Kernel Version 16.7.0: Thu Jun 15 17:36:27 PDT 2017; root:xnu-3789.70.16~2/RELEASE_X86_64",
+            "python_full_version": "3.6.1",
             "python_version": "3.6",
             "sys_platform": "darwin"
         },
@@ -27,6 +27,13 @@
         ]
     },
     "default": {
+        "phonenumbers": {
+            "hashes": [
+                "sha256:7954665519f7374edf80be0b263610f776dfb55fb7c9d809c16264279593ed5b",
+                "sha256:adb2dd985f875ac035bbdc6a1cc57e30834e106e2ff7899e09a1690b474c1774"
+            ],
+            "version": "==8.8.5"
+        },
         "python-dateutil": {
             "hashes": [
                 "sha256:95511bae634d69bc7329ba55e646499a842bc4ec342ad54a8cdb65645a0aad3c",
