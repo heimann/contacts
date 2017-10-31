@@ -15,22 +15,37 @@ from .exceptions import (
 from .rules import ALLOWED_FIELDS
 
 class ContactCard(object):
-    """
-    A :class:`Contact Card <ContactCard>` object.
+    """A :class: `Contact Card <ContactCard>` object that describes a person or entity for use with Phones.
 
-    :param name: Full Name (required).
-    :param first_name: First Name.
-    :param last_name: Last Name.
-    :param photo: fileobject of photo.
-    :param email: E-Mail address.
-    :param website: URL.
-    :param twitter: Twitter Username (ex: @david_heimann)
+    Attributes:
+        card: The built contact card.
     """
 
     _allowed_fields = ALLOWED_FIELDS + ['_card', '_card_field']
-    _card = None
+    card = None
 
-    def __init__(self, **kwargs):
+    def __init__(
+            self,
+            name,
+            phone_number,
+            first_name=False,
+            last_name=False,
+            photo=False,
+            email=False,
+            website=False,
+            twitter=False
+        ):
+        """Initializes a ContactCard.
+
+        :param name: Full Name (required).
+        :param phone_number: Phone Number (required).
+        :param first_name: First Name.
+        :param last_name: Last Name.
+        :param photo: fileobject of photo.
+        :param email: E-Mail address.
+        :param website: URL.
+        :param twitter: Twitter Username (ex: @david_heimann)
+        """
         self._card = vobject.vCard()
 
         # all those keys will be initialized as class attributes
