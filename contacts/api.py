@@ -8,7 +8,10 @@ This module implements the Contacts 📕 API.
 
 import vobject
 
-from .exceptions import ContactCreationException
+from .exceptions import (
+    ContactCardException,
+)
+
 from .rules import ALLOWED_FIELDS
 
 class ContactCard(object):
@@ -37,10 +40,6 @@ class ContactCard(object):
         # and update the given keys by their given values
         self.__dict__.update((key, value) for key, value in kwargs.items() if key in allowed_keys)
 
-        if not self.name:
-            raise ContactCreationException(
-                "A Contact Card must have a name associated with it."
-            )
 
     def __setattr__(self, attribute, value):
         if not attribute in set(self._allowed_fields):

@@ -6,5 +6,5 @@ Exceptions ⚠️ for Contacts 📕.
 :license: MIT, see LICENSE for more details.
 """
 
-class ContactCreationException(Exception):
-    """An Exception occured when creating the Contact Card."""
+class ContactCardException(Exception):
+    """An Exception occured on the <ContactCard>."""
