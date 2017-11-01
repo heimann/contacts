@@ -23,7 +23,7 @@ class ContactCard(object):
         card: The built contact card.
     """
 
-    _allowed_fields = ALLOWED_FIELDS + ['_card', '_card_field']
+    _modifiable_fields = ALLOWED_FIELDS + ['_card', '_card_field']
     card = None
 
     def __init__(
@@ -53,11 +53,15 @@ class ContactCard(object):
         allowed_keys = set(ALLOWED_FIELDS)
         self.__dict__.update((key, False) for key in allowed_keys)
         self.__dict__.update((key, value) for key, value in kwargs.items() if key in allowed_keys)
+        self.__dict__.update((key, False) for key in self._modifiable_fields)
+        self.__dict__.update((key, value) for key, value in kwargs.items() if key in self._modifiable_fields)
+
     def __repr__(self):
         return f"ContactCard(name={self.name}, phone_number={self.phone_number})"
 
     def __setattr__(self, attribute, value):
         if not attribute in set(self._allowed_fields):
+        if not attribute in set(self._modifiable_fields):
             print("{0} is not a valid attribute of a Contact Card.\nValid attributes are: {1}".format(
                 attribute,
                 ALLOWED_FIELDS
