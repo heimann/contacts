@@ -8,12 +8,12 @@ This module sets rules for Contacts 📕.
 
 
 ALLOWED_FIELDS = [
-    'name',
     'phone_number',
+    'name',
+    'email',
     'first_name',
     'last_name',
-    'phone_number',
     'photo',
-    'email',
-    'twitter'
+    'twitter',
+    'website'
 ]
