@@ -53,6 +53,8 @@ class ContactCard(object):
         allowed_keys = set(ALLOWED_FIELDS)
         self.__dict__.update((key, False) for key in allowed_keys)
         self.__dict__.update((key, value) for key, value in kwargs.items() if key in allowed_keys)
+    def __repr__(self):
+        return f"ContactCard(name={self.name}, phone_number={self.phone_number})"
 
     def __setattr__(self, attribute, value):
         if not attribute in set(self._allowed_fields):
