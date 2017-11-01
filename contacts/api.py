@@ -26,19 +26,10 @@ class ContactCard(object):
     _modifiable_fields = ALLOWED_FIELDS + ['_card', '_card_field']
     card = None
 
-    def __init__(
-            self,
-            name,
-            phone_number,
-            first_name=False,
-            last_name=False,
-            photo=False,
-            email=False,
-            website=False,
-            twitter=False
-    ):
+    def __init__(self, **kwargs):
         """Initializes a ContactCard.
 
+        (See ALLOWED_FIELDS)
         :param name: Full Name (required).
         :param phone_number: Phone Number (required).
         :param first_name: First Name.
@@ -50,9 +41,6 @@ class ContactCard(object):
         """
         self._card = vobject.vCard()
 
-        allowed_keys = set(ALLOWED_FIELDS)
-        self.__dict__.update((key, False) for key in allowed_keys)
-        self.__dict__.update((key, value) for key, value in kwargs.items() if key in allowed_keys)
         self.__dict__.update((key, False) for key in self._modifiable_fields)
         self.__dict__.update((key, value) for key, value in kwargs.items() if key in self._modifiable_fields)
 
