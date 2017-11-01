@@ -48,7 +48,6 @@ class ContactCard(object):
         return f"ContactCard(name={self.name}, phone_number={self.phone_number})"
 
     def __setattr__(self, attribute, value):
-        if not attribute in set(self._allowed_fields):
         if not attribute in set(self._modifiable_fields):
             print("{0} is not a valid attribute of a Contact Card.\nValid attributes are: {1}".format(
                 attribute,
@@ -57,11 +56,47 @@ class ContactCard(object):
         else:
             self.__dict__[attribute] = value
 
+    def _clean_fields(self):
+        for field in ALLOWED_FIELDS:
+            getattr(self, f"_clean_{field}")()
+
     def _clean_phone_number(self):
         if not self.phone_number:
             raise ContactCardException(
                 "A Contact Card must have a :phone_number: to pass validation."
             )
 
+        print("Cleaning phone number")
         self.phone_number = convert_to_e164(self.phone_number)
 
+    def _clean_name(self):
+        pass
+
+    def _clean_email(self):
+        pass
+
+    def _clean_first_name(self):
+        pass
+
+    def _clean_last_name(self):
+        pass
+
+    def _clean_photo(self):
+        pass
+
+    def _clean_twitter(self):
+        pass
+
+    def _clean_website(self):
+        pass
+
+    def build(self):
+        """
+        Builds a ContactCard (.vcf) file and returns it given the instances parameters.
+
+        :return: Card (file - .vcf).
+        """
+        # Clean all fields.
+        self._clean_fields()
+
+        # Build
