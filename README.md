@@ -23,5 +23,5 @@ card = ContactCard(
 card.build()
 ```
 
-**⚠️WARNING⚠️:** Contacts is a WIP and doesn't work yet. Feel free to help out or subscribe / star and following 
+**⚠️WARNING⚠️:** Contacts is a WIP and doesn't work yet. Feel free to help out or subscribe / star and follow 
 along. I'll remove this when it's usable.
